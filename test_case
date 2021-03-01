@@ -1,0 +1,16 @@
+from selenium import webdriver
+
+USERNAME="Safeetha"
+PASSWORD="Password"
+
+driver = webdriver.Chrome(chromedriver.exe)
+driver.get('https://safeetha.com/wordpress/wp-login.php')
+
+user_input = driver.find_element_by_id('user_login')
+user_input.send_keys(USERNAME)
+
+password_input = driver.find_element_by_id('user_pass')
+password_input.send_keys(PASSWORD)
+
+login_button = driver.find_element_by_id('wp_submit')
+login_button.click()
